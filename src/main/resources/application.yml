@@ -1,0 +1,24 @@
+spring:
+  data:
+    mongodb:
+        uri: mongodb+srv://heribertoem19:-6PS234n2nTeLcH@mycluster.ei0r1.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster
+        database: sample_mflix
+  application:
+    name: user-service
+  sleuth:
+    trace-id128: true
+    propagation:
+      type: b3
+    supports-join: false
+
+server:
+  port: 1020
+  servlet:
+    context-path: /user-service
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
